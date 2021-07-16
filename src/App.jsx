@@ -1,3 +1,5 @@
 export function App() {
-    return <h1>Hello, World</h1>
+    throw new Error('Eita carai, swing da zebra')
+
+    return <h1>Hello, ReactJS</h1>
 }
