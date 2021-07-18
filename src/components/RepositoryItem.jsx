@@ -2,9 +2,9 @@ export function RepositoryItem(props) {
     return (
         <li>
             <strong>{props.repository ?? 'Unform'}</strong>
-            <p>Forms in ReactJS</p>
+            <p>{props.description ?? 'No Description'}</p>
 
-            <a href="">
+            <a href={props.link ?? "https://google.com"}>
                 Acessar repositório
             </a>
         </li>
