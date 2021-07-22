@@ -19,7 +19,7 @@ export function RepositoryList() {
             .then(response => response.json())
             .then(data => setRepositories(data))
         
-    }, [repositories])
+    }, [repositories]) //isso ta em loop, precisa ser retirado repositories
 
     return (
         <section className="repository-list">
