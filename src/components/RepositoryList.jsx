@@ -7,7 +7,7 @@ export function RepositoryList() {
     const [repositories, setRepositories] = useState([]);
 
     useEffect(()=> {
-        fetch('https://api.github.com/orgs/rocketseat/repos')
+        fetch('https://api.github.com/users/luis-luciqm/repos')
             .then(response => response.json())
             .then(data => setRepositories(data))
         
@@ -15,12 +15,11 @@ export function RepositoryList() {
 
     return (
         <section className="repository-list">
-            <h1>Lista de repositórios</h1>
+            <h1>Listando os repositórios de {repositories[0]?.owner.login}</h1>
             <ul>
                 {repositories.map(repository => {
                     return <RepositoryItem key={repository.name} repository = {repository}/> 
                 })}
-                
             </ul>
         </section>
     );
