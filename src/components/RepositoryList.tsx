@@ -3,8 +3,17 @@ import { useEffect, useState } from 'react';
 
 import '../styles/repositories.scss';
 
+interface Repository{
+    name: string;
+    description: string;
+    html_url: string;
+    owner: {
+        login: string;
+    }
+}
+
 export function RepositoryList() {
-    const [repositories, setRepositories] = useState([]);
+    const [repositories, setRepositories] = useState<Repository[]>([]);
 
     useEffect(()=> {
         fetch('https://api.github.com/users/luis-luciqm/repos')
@@ -15,6 +24,7 @@ export function RepositoryList() {
 
     return (
         <section className="repository-list">
+            repositories[0]: ;
             <h1>Listando os repositórios de {repositories[0]?.owner.login}</h1>
             <ul>
                 {repositories.map(repository => {
