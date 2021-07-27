@@ -24,7 +24,6 @@ export function RepositoryList() {
 
     return (
         <section className="repository-list">
-            repositories[0]: ;
             <h1>Listando os repositórios de {repositories[0]?.owner.login}</h1>
             <ul>
                 {repositories.map(repository => {
